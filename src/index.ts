@@ -12,7 +12,7 @@ wss.on("connection", (socket) => {
         console.log(`Received message: ${message.toString() }`); 
         setTimeout(()=>{
             socket.send("message recieved: " + message.toString()); 
-        },1000);  
+        },1000);
     });
 
     socket.on("close", () =>{
