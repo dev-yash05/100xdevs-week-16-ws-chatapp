@@ -12,18 +12,15 @@ wss.on("connection", (socket) => {
     console.log(`New user connected. Total users: ${userCount}`);
 
     socket.on("message", (message) => {
-        console.log(`Received message: ${message.toString() }`); 
-        setTimeout(()=>{
-            socket.send("message recieved: " + message.toString());
-            for (let i = 0; i < allSockets.length; i++){
-                const s: any = allSockets[i];
-                s.send("broadcast: " + message.toString());
-            } 
-        },1000);
+        console.log(`Received message: ${message.toString() }`);
+        allSockets.forEach( s => {
+            s.send(`Some User : ${message.toString() }`);
+        })
     });
 
     socket.on("close", () =>{
         userCount--;
+        allSockets = allSockets.filter( s => s !== socket);
         console.log(`User disconnected. Total users: ${userCount}`);
     })
 });
