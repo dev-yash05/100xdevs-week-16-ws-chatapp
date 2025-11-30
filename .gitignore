@@ -1,0 +1,56 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build / output
+dist/
+build/
+out/
+lib/
+*.tsbuildinfo
+
+# TypeScript compiled
+**/*.js
+**/*.js.map
+**/*.d.ts
+
+# Environment
+.env
+.env.*.local
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Certificates / secrets
+*.pem
+*.key
+*.crt
+
+# Package artifacts
+*.tgz
+*.zip
+
+# Misc
+.cache
